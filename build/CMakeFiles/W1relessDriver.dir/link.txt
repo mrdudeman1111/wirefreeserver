@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/W1relessDriver.dir/Reference.cpp.o CMakeFiles/W1relessDriver.dir/driver.cpp.o -o W1relessDriver  -lopenvr_api -ldl 
