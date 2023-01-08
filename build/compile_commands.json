@@ -1,12 +1,7 @@
 [
 {
   "directory": "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build",
-  "command": "/usr/bin/g++  -I/usr/include/openvr -g -o CMakeFiles/W1relessDriver.dir/Reference.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/Reference.cpp",
-  "file": "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/Reference.cpp"
-},
-{
-  "directory": "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build",
-  "command": "/usr/bin/g++  -I/usr/include/openvr -g -o CMakeFiles/W1relessDriver.dir/driver.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp",
+  "command": "/usr/bin/g++ -DW1relessDriver_EXPORTS -I/usr/include/openvr -g -fPIC -o CMakeFiles/W1relessDriver.dir/driver.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp",
   "file": "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp"
 }
 ]

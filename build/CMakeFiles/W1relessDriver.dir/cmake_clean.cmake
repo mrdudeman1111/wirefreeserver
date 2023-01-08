@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/W1relessDriver.dir/Reference.cpp.o"
-  "CMakeFiles/W1relessDriver.dir/Reference.cpp.o.d"
   "CMakeFiles/W1relessDriver.dir/driver.cpp.o"
   "CMakeFiles/W1relessDriver.dir/driver.cpp.o.d"
-  "W1relessDriver"
-  "W1relessDriver.pdb"
+  "libW1relessDriver.pdb"
+  "libW1relessDriver.so"
 )
 
 # Per-language clean rules from dependency scanning.

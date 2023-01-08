@@ -129,30 +129,6 @@ W1relessDriver/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/build
 .PHONY : W1relessDriver/fast
 
-Reference.o: Reference.cpp.o
-.PHONY : Reference.o
-
-# target to build an object file
-Reference.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/Reference.cpp.o
-.PHONY : Reference.cpp.o
-
-Reference.i: Reference.cpp.i
-.PHONY : Reference.i
-
-# target to preprocess a source file
-Reference.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/Reference.cpp.i
-.PHONY : Reference.cpp.i
-
-Reference.s: Reference.cpp.s
-.PHONY : Reference.s
-
-# target to generate assembly for a file
-Reference.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/Reference.cpp.s
-.PHONY : Reference.cpp.s
-
 driver.o: driver.cpp.o
 .PHONY : driver.o
 
@@ -186,9 +162,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... W1relessDriver"
-	@echo "... Reference.o"
-	@echo "... Reference.i"
-	@echo "... Reference.s"
 	@echo "... driver.o"
 	@echo "... driver.i"
 	@echo "... driver.s"

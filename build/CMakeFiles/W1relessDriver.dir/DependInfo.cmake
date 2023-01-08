@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/Reference.cpp" "CMakeFiles/W1relessDriver.dir/Reference.cpp.o" "gcc" "CMakeFiles/W1relessDriver.dir/Reference.cpp.o.d"
   "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp" "CMakeFiles/W1relessDriver.dir/driver.cpp.o" "gcc" "CMakeFiles/W1relessDriver.dir/driver.cpp.o.d"
   )
 

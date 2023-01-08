@@ -403,7 +403,6 @@ public:
 	{
 	}
 
-
 	virtual EVRInitError Activate( vr::TrackedDeviceIndex_t unObjectId )
 	{
 		m_unObjectId = unObjectId;
