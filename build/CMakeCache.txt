@@ -226,17 +226,57 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Path to a program.
+Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=/bin/glslangValidator
+
+//Path to a program.
+Vulkan_GLSLC_EXECUTABLE:FILEPATH=/bin/glslc
+
+//Path to a file.
+Vulkan_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+Vulkan_LIBRARY:FILEPATH=/lib/libvulkan.so
+
 //Path to a library.
 pkgcfg_lib_OVR_dl:FILEPATH=/usr/lib/libdl.a
 
 //Path to a library.
 pkgcfg_lib_OVR_openvr_api:FILEPATH=/usr/lib/libopenvr_api.so
 
+//The directory containing a CMake configuration file for vulkan.
+vulkan_DIR:PATH=vulkan_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
 ########################
 
+AMF_CFLAGS:INTERNAL=
+AMF_CFLAGS_I:INTERNAL=
+AMF_CFLAGS_OTHER:INTERNAL=
+AMF_FOUND:INTERNAL=
+AMF_INCLUDEDIR:INTERNAL=
+AMF_LIBDIR:INTERNAL=
+AMF_LIBS:INTERNAL=
+AMF_LIBS_L:INTERNAL=
+AMF_LIBS_OTHER:INTERNAL=
+AMF_LIBS_PATHS:INTERNAL=
+AMF_MODULE_NAME:INTERNAL=
+AMF_PREFIX:INTERNAL=
+AMF_STATIC_CFLAGS:INTERNAL=
+AMF_STATIC_CFLAGS_I:INTERNAL=
+AMF_STATIC_CFLAGS_OTHER:INTERNAL=
+AMF_STATIC_LIBDIR:INTERNAL=
+AMF_STATIC_LIBS:INTERNAL=
+AMF_STATIC_LIBS_L:INTERNAL=
+AMF_STATIC_LIBS_OTHER:INTERNAL=
+AMF_STATIC_LIBS_PATHS:INTERNAL=
+AMF_VERSION:INTERNAL=
+AMF_amf-amdgpu-pro_INCLUDEDIR:INTERNAL=
+AMF_amf-amdgpu-pro_LIBDIR:INTERNAL=
+AMF_amf-amdgpu-pro_PREFIX:INTERNAL=
+AMF_amf-amdgpu-pro_VERSION:INTERNAL=
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -382,6 +422,8 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.0()]
+//Details about finding Vulkan
+FIND_PACKAGE_MESSAGE_DETAILS_Vulkan:INTERNAL=[/lib/libvulkan.so][/usr/include][cfound components: glslc glslangValidator ][v1.3.235()]
 OVR_CFLAGS:INTERNAL=-I/usr/include/openvr
 OVR_CFLAGS_I:INTERNAL=
 OVR_CFLAGS_OTHER:INTERNAL=
@@ -421,8 +463,17 @@ OVR_openvr_VERSION:INTERNAL=
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_GLSLANG_VALIDATOR_EXECUTABLE
+Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE
+Vulkan_GLSLC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_INCLUDE_DIR
+Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_LIBRARY
+Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+__pkg_config_checked_AMF:INTERNAL=1
 __pkg_config_checked_OVR:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_OVR_dl
 pkgcfg_lib_OVR_dl-ADVANCED:INTERNAL=1

@@ -124,6 +124,21 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindVulkan.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "/usr/share/cmake/Modules/FindPkgConfig.cmake"
 		},
 		{

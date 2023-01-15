@@ -1,1 +1,1 @@
-/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libW1relessDriver.so -o libW1relessDriver.so CMakeFiles/W1relessDriver.dir/driver.cpp.o  -lopenvr_api -ldl 
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libW1relessDriver.so -o libW1relessDriver.so CMakeFiles/W1relessDriver.dir/driver.cpp.o  -lopenvr_api -ldl -lamdenc64 -lvulkan 

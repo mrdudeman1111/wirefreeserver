@@ -122,8 +122,44 @@ class HeadsetDriver : vr::ITrackedDeviceServerDriver, vr::IVRDriverDirectModeCom
     }
 
 // Inherited from vr::IVRDriverDirectModeComponent
+    virtual void CreateSwapTextureSet(uint32_t unPid, const SwapTextureSet_t* pSwapTextureSetDesc, SwapTextureSet_t* pOutSwapTextureSet)
+    {
+
+    }
+
+    virtual void DestroySwapTextureSet(vr::SharedTextureHandle_t sharedTextureHandle)
+    {
+        
+    }
+
+    virtual void DestroyAllSwapTextureSets(uint32_t unPid)
+    {
+
+    }
+
+    virtual void GetNextSwapTextureSetIndex(vr::SharedTextureHandle_t sharedTextureHandles[2], uint32_t* pIndices[2])
+    {
+
+    }
+
+    virtual void SubmitLayer(const SubmitLayerPerEye_t& EyeLayers[2])
+    {
+
+    }
+
+    virtual void PostPresent()
+    {
+
+    }
+
     virtual void Present(vr::SharedTextureHandle_t syncTexture)
     {
+
+    }
+
+    virtual void GetFrameTiming(vr::DriverDirectMode_FrameTiming* pFrameTiming)
+    {
+        // 11ms Screen latency    >1ms network latency    33ms  Tracking Latency   12 ms Encode Latency
     }
 };
 
