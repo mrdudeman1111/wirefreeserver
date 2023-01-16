@@ -129,7 +129,7 @@ class HeadsetDriver : vr::ITrackedDeviceServerDriver, vr::IVRDriverDirectModeCom
 
     virtual void DestroySwapTextureSet(vr::SharedTextureHandle_t sharedTextureHandle)
     {
-        
+
     }
 
     virtual void DestroyAllSwapTextureSets(uint32_t unPid)
