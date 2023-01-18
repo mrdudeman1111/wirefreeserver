@@ -8,7 +8,7 @@
 #include <AMF/components/VideoEncoderHEVC.h>
 #include <AMF/core/Factory.h>
 
-static amf::AMF_MEMORY_TYPE = amf::AMF_MEMORY_VULKAN;
+static amf::AMF_MEMORY_TYPE MemoryType= amf::AMF_MEMORY_VULKAN;
 
 static const int CodecIndex = 1; // 0 = AVC (h.264)  1 = HEVC (h.265)  2 = AV1
 
@@ -25,9 +25,9 @@ static void FillVkSurface(amf::AMFContext* Context, amf::AMFSurface* Surface)
     amf::AMFComputePtr Compute;
     Context->GetCompute(amf::AMF_MEMORY_VULKAN, &Compute);
 
-    for(amf_size p = 0; p < RightColor1->GetPlanesCount(); p++)
-    {
-    }
+    // for(amf_size p = 0; p < RightColor1->GetPlanesCount(); p++)
+    // {
+    // }
 }
 
 class Encoder
@@ -41,4 +41,4 @@ class Encoder
     {
 
     }
-}
+};

@@ -69,31 +69,63 @@ include CMakeFiles/W1relessDriver.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/W1relessDriver.dir/flags.make
 
-CMakeFiles/W1relessDriver.dir/driver.cpp.o: CMakeFiles/W1relessDriver.dir/flags.make
-CMakeFiles/W1relessDriver.dir/driver.cpp.o: /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp
-CMakeFiles/W1relessDriver.dir/driver.cpp.o: CMakeFiles/W1relessDriver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/W1relessDriver.dir/driver.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/W1relessDriver.dir/driver.cpp.o -MF CMakeFiles/W1relessDriver.dir/driver.cpp.o.d -o CMakeFiles/W1relessDriver.dir/driver.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp
+CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o: CMakeFiles/W1relessDriver.dir/flags.make
+CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o: /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/Encoder.cpp
+CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o: CMakeFiles/W1relessDriver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o -MF CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o.d -o CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/Encoder.cpp
 
-CMakeFiles/W1relessDriver.dir/driver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/W1relessDriver.dir/driver.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp > CMakeFiles/W1relessDriver.dir/driver.cpp.i
+CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/Encoder.cpp > CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.i
 
-CMakeFiles/W1relessDriver.dir/driver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/W1relessDriver.dir/driver.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp -o CMakeFiles/W1relessDriver.dir/driver.cpp.s
+CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/Encoder.cpp -o CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.s
+
+CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o: CMakeFiles/W1relessDriver.dir/flags.make
+CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o: /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/VulkanBackend.cpp
+CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o: CMakeFiles/W1relessDriver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o -MF CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o.d -o CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/VulkanBackend.cpp
+
+CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/VulkanBackend.cpp > CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.i
+
+CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/VulkanBackend.cpp -o CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.s
+
+CMakeFiles/W1relessDriver.dir/src/driver.cpp.o: CMakeFiles/W1relessDriver.dir/flags.make
+CMakeFiles/W1relessDriver.dir/src/driver.cpp.o: /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/driver.cpp
+CMakeFiles/W1relessDriver.dir/src/driver.cpp.o: CMakeFiles/W1relessDriver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/W1relessDriver.dir/src/driver.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/W1relessDriver.dir/src/driver.cpp.o -MF CMakeFiles/W1relessDriver.dir/src/driver.cpp.o.d -o CMakeFiles/W1relessDriver.dir/src/driver.cpp.o -c /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/driver.cpp
+
+CMakeFiles/W1relessDriver.dir/src/driver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/W1relessDriver.dir/src/driver.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/driver.cpp > CMakeFiles/W1relessDriver.dir/src/driver.cpp.i
+
+CMakeFiles/W1relessDriver.dir/src/driver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/W1relessDriver.dir/src/driver.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/driver.cpp -o CMakeFiles/W1relessDriver.dir/src/driver.cpp.s
 
 # Object files for target W1relessDriver
 W1relessDriver_OBJECTS = \
-"CMakeFiles/W1relessDriver.dir/driver.cpp.o"
+"CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o" \
+"CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o" \
+"CMakeFiles/W1relessDriver.dir/src/driver.cpp.o"
 
 # External object files for target W1relessDriver
 W1relessDriver_EXTERNAL_OBJECTS =
 
-libW1relessDriver.so: CMakeFiles/W1relessDriver.dir/driver.cpp.o
+libW1relessDriver.so: CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o
+libW1relessDriver.so: CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o
+libW1relessDriver.so: CMakeFiles/W1relessDriver.dir/src/driver.cpp.o
 libW1relessDriver.so: CMakeFiles/W1relessDriver.dir/build.make
 libW1relessDriver.so: CMakeFiles/W1relessDriver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libW1relessDriver.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libW1relessDriver.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/W1relessDriver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

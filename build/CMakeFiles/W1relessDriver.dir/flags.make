@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DW1relessDriver_EXPORTS
 
-CXX_INCLUDES = -I/usr/include/openvr
+CXX_INCLUDES = -I/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/include -I/usr/include/openvr
 
 CXX_FLAGS = -g -fPIC
 

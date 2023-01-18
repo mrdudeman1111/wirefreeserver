@@ -129,29 +129,77 @@ W1relessDriver/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/build
 .PHONY : W1relessDriver/fast
 
-driver.o: driver.cpp.o
-.PHONY : driver.o
+src/Encoder.o: src/Encoder.cpp.o
+.PHONY : src/Encoder.o
 
 # target to build an object file
-driver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/driver.cpp.o
-.PHONY : driver.cpp.o
+src/Encoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o
+.PHONY : src/Encoder.cpp.o
 
-driver.i: driver.cpp.i
-.PHONY : driver.i
+src/Encoder.i: src/Encoder.cpp.i
+.PHONY : src/Encoder.i
 
 # target to preprocess a source file
-driver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/driver.cpp.i
-.PHONY : driver.cpp.i
+src/Encoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.i
+.PHONY : src/Encoder.cpp.i
 
-driver.s: driver.cpp.s
-.PHONY : driver.s
+src/Encoder.s: src/Encoder.cpp.s
+.PHONY : src/Encoder.s
 
 # target to generate assembly for a file
-driver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/driver.cpp.s
-.PHONY : driver.cpp.s
+src/Encoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.s
+.PHONY : src/Encoder.cpp.s
+
+src/VulkanBackend.o: src/VulkanBackend.cpp.o
+.PHONY : src/VulkanBackend.o
+
+# target to build an object file
+src/VulkanBackend.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o
+.PHONY : src/VulkanBackend.cpp.o
+
+src/VulkanBackend.i: src/VulkanBackend.cpp.i
+.PHONY : src/VulkanBackend.i
+
+# target to preprocess a source file
+src/VulkanBackend.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.i
+.PHONY : src/VulkanBackend.cpp.i
+
+src/VulkanBackend.s: src/VulkanBackend.cpp.s
+.PHONY : src/VulkanBackend.s
+
+# target to generate assembly for a file
+src/VulkanBackend.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.s
+.PHONY : src/VulkanBackend.cpp.s
+
+src/driver.o: src/driver.cpp.o
+.PHONY : src/driver.o
+
+# target to build an object file
+src/driver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/driver.cpp.o
+.PHONY : src/driver.cpp.o
+
+src/driver.i: src/driver.cpp.i
+.PHONY : src/driver.i
+
+# target to preprocess a source file
+src/driver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/driver.cpp.i
+.PHONY : src/driver.cpp.i
+
+src/driver.s: src/driver.cpp.s
+.PHONY : src/driver.s
+
+# target to generate assembly for a file
+src/driver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/W1relessDriver.dir/build.make CMakeFiles/W1relessDriver.dir/src/driver.cpp.s
+.PHONY : src/driver.cpp.s
 
 # Help Target
 help:
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... W1relessDriver"
-	@echo "... driver.o"
-	@echo "... driver.i"
-	@echo "... driver.s"
+	@echo "... src/Encoder.o"
+	@echo "... src/Encoder.i"
+	@echo "... src/Encoder.s"
+	@echo "... src/VulkanBackend.o"
+	@echo "... src/VulkanBackend.i"
+	@echo "... src/VulkanBackend.s"
+	@echo "... src/driver.o"
+	@echo "... src/driver.i"
+	@echo "... src/driver.s"
 .PHONY : help
 
 

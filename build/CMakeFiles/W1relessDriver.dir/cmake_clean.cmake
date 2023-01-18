@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/W1relessDriver.dir/driver.cpp.o"
-  "CMakeFiles/W1relessDriver.dir/driver.cpp.o.d"
+  "CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o"
+  "CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o.d"
+  "CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o"
+  "CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o.d"
+  "CMakeFiles/W1relessDriver.dir/src/driver.cpp.o"
+  "CMakeFiles/W1relessDriver.dir/src/driver.cpp.o.d"
   "libW1relessDriver.pdb"
   "libW1relessDriver.so"
 )

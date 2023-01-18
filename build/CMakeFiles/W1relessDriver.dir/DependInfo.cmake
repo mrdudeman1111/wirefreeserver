@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/driver.cpp" "CMakeFiles/W1relessDriver.dir/driver.cpp.o" "gcc" "CMakeFiles/W1relessDriver.dir/driver.cpp.o.d"
+  "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/Encoder.cpp" "CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o" "gcc" "CMakeFiles/W1relessDriver.dir/src/Encoder.cpp.o.d"
+  "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/VulkanBackend.cpp" "CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o" "gcc" "CMakeFiles/W1relessDriver.dir/src/VulkanBackend.cpp.o.d"
+  "/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/src/driver.cpp" "CMakeFiles/W1relessDriver.dir/src/driver.cpp.o" "gcc" "CMakeFiles/W1relessDriver.dir/src/driver.cpp.o.d"
   )
 
 # Targets to which this target links.

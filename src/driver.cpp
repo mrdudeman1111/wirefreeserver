@@ -7,6 +7,8 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+#include <VulkanBackend.h>
+
 #define InPort 2402
 #define OutPort 2403
 
@@ -109,6 +111,7 @@ class HeadsetDriver : vr::ITrackedDeviceServerDriver, vr::IVRDriverDirectModeCom
     public:
     vr::TrackedDeviceIndex_t ObjId;
     vr::PropertyContainerHandle_t PropContainer;
+    VkRenderer VkRender;
 
 // Inherited from vr::ITrackeDeviceServerDriver
     virtual vr::EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId)
@@ -142,7 +145,7 @@ class HeadsetDriver : vr::ITrackedDeviceServerDriver, vr::IVRDriverDirectModeCom
 
     }
 
-    virtual void SubmitLayer(const SubmitLayerPerEye_t& EyeLayers[2])
+    virtual void SubmitLayer(const SubmitLayerPerEye_t (&EyeLayers) [2])
     {
 
     }
