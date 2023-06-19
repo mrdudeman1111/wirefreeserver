@@ -1,3 +1,0 @@
-/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles/W1relessDriver.dir
-/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles/edit_cache.dir
-/home/ethan/.steam/steam/steamapps/common/SteamVR/drivers/w1reless/build/CMakeFiles/rebuild_cache.dir

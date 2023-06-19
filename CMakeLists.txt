@@ -1,19 +1,23 @@
-cmake_minimum_required(VERSION 3.18.1)
-project("CustomDriver")
+CMAKE_MINIMUM_REQUIRED(VERSION 3.18.1)
+project("W1reless Driver")
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ~/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ~/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ~/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
 
 file(GLOB SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h)
+  ${CMAKE_SOURCE_DIR}/linux64/vrDriver.cpp
+  ${CMAKE_SOURCE_DIR}/linux64/Encoder.cpp
+  ${CMAKE_SOURCE_DIR}/linux64/VulkanBackend.cpp)
 
 find_package(Vulkan REQUIRED)
-find_package(PkgConfig REQUIRED)
-pkg_search_module(OVR REQUIRED openvr)
 
-include_directories(/usr/include)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_library(W1relessDriver SHARED ${SOURCES})
+add_library(_W1reless SHARED ${SOURCES})
 
-target_include_directories(W1relessDriver PUBLIC ${OVR_INCLUDE_DIRS})
+set_target_properties(_W1reless PROPERTIES PREFIX "")
+set_target_properties(_W1reless PROPERTIES OUTPUT_NAME "driver_W1reless")
 
-target_link_libraries(W1relessDriver PUBLIC ${OVR_LIBRARIES} amdenc64 vulkan)
+target_link_libraries(_W1reless vulkan)
+

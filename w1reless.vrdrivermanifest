@@ -1,8 +1,0 @@
-{
-    "alwaysActivate": true,
-    "name" : "w1reless",
-    "directory" : "",
-    "resourceOnly" : false,
-    "prefersUpperDeviceIndices" : true,
-    "hmd_presence" : []
-}
