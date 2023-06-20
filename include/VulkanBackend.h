@@ -1,6 +1,5 @@
 #include <cstdint>
 #include <map>
-#include <vulkan/vulkan.h>
 #include <iostream>
 #include <string>
 #include <vulkan/vulkan.h>
@@ -18,7 +17,9 @@ struct Texture
 
 class VkBackend
 {
-    public:
+public:
+    VkBackend();
+    ~VkBackend();
     VkDevice Device;
     VkPhysicalDevice PDev;
     VkInstance Instance;

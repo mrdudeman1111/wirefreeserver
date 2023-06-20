@@ -1,0 +1,20 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "exe",
+      "exe": "C:\\Program Files\\Steam\\steamapps\\common\\SteamVR\\bin\\win64\\vrstartup.exe",
+      "project": "CMakeLists.txt",
+      "projectTarget": "vrstartup.exe (C:\\Program Files\\Steam\\steamapps\\common\\SteamVR\\bin\\win64\\vrstartup.exe)",
+      "name": "vrstartup.exe (C:\\Program Files\\Steam\\steamapps\\common\\SteamVR\\bin\\win64\\vrstartup.exe)"
+    },
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "CMakeLists.txt",
+      "projectTarget": "driver_W1reless.dll (C:\\Program Files\\Steam\\steamapps\\common\\SteamVR\\drivers\\W1reless\\bin\\win64\\driver_W1reless.dll)",
+      "name": "driver_W1reless.dll (C:\\Program Files\\Steam\\steamapps\\common\\SteamVR\\drivers\\W1reless\\bin\\win64\\driver_W1reless.dll)"
+    }
+  ]
+}

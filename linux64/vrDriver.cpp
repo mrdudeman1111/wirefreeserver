@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-#include <openvr/openvr_driver.h>
+#include <openvr_driver.h>
 
 #include <VulkanBackend.h>
 
@@ -21,9 +21,11 @@
 #error "Unsupported Platform."
 #endif
 
+vr::IVRDriverLog* Logger;
+
 void DriverLog(const char* LogMessage)
 {
-  vr::VRDriverLog()->Log(LogMessage);
+    Logger->Log(LogMessage);
 }
 
 class wHeadset : public vr::IVRVirtualDisplay, public vr::ITrackedDeviceServerDriver
@@ -96,9 +98,7 @@ public:
 
   std::string GetSerialNumber()
   {
-    char SerialNumber[1024];
-    vr::VRSettings()->GetString("W1reless", vr::k_pch_Null_SerialNumber_String, SerialNumber, 1024);
-    return SerialNumber;
+    return "W1reless Headset";
   }
 
 // IVRVirtualDisplay
@@ -139,10 +139,10 @@ public:
 
   vr::EVRInitError Init(vr::IVRDriverContext* pDriverContext) override
   {
-    DriverLog("Init called");
-
     VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);
 
+    Logger = vr::VRDriverLog();
+    
     Headset = new wHeadset();
 
     if(Headset->IsValid())

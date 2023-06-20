@@ -5,10 +5,25 @@
 #include <vector>
 
 #include <VulkanBackend.h>
-#include <vulkan/vulkan_core.h>
+#include <vulkan/vulkan.h>
 
 std::vector<const char*> InstanceLayers = {"VK_KHRONOS_LAYER_validation"};
 std::vector<const char*> DeviceExtensions = {"VK_KHR_external_memory"};
+
+VkBackend::VkBackend()
+{}
+
+VkBackend::~VkBackend()
+{
+    for (uint32_t i = 0; i < TexCache.size(); i++)
+    {
+        vkDestroyImage(Device, TexCache[i].Image, nullptr);
+        vkFreeMemory(Device, TexCache[i].Memory, nullptr);
+    }
+
+    vkDestroyDevice(Device, nullptr);
+    vkDestroyInstance(Instance, nullptr);
+}
 
 void VkBackend::Init()
 {
@@ -41,8 +56,6 @@ void VkBackend::Init()
 
 void VkBackend::Cleanup()
 {
-  vkDestroyDevice(Device, nullptr);
-  vkDestroyInstance(Instance, nullptr);
 }
 
 int VkBackend::GetMemIndex(uint32_t MemType)
