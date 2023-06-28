@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /run/media/ethanw/LinuxGames/Repos/wirefreeserver
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/_W1reless.dir/all
+all: CMakeFiles/_W1reless64.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/_W1reless.dir/clean
+clean: CMakeFiles/_W1reless64.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/_W1reless.dir
+# Target rules for target CMakeFiles/_W1reless64.dir
 
 # All Build rule for target.
-CMakeFiles/_W1reless.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=1,2,3,4 "Built target _W1reless"
-.PHONY : CMakeFiles/_W1reless.dir/all
+CMakeFiles/_W1reless64.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target _W1reless64"
+.PHONY : CMakeFiles/_W1reless64.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/_W1reless.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/_W1reless.dir/all
+CMakeFiles/_W1reless64.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/_W1reless64.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles 0
-.PHONY : CMakeFiles/_W1reless.dir/rule
+.PHONY : CMakeFiles/_W1reless64.dir/rule
 
 # Convenience name for target.
-_W1reless: CMakeFiles/_W1reless.dir/rule
-.PHONY : _W1reless
+_W1reless64: CMakeFiles/_W1reless64.dir/rule
+.PHONY : _W1reless64
 
 # clean rule for target.
-CMakeFiles/_W1reless.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/clean
-.PHONY : CMakeFiles/_W1reless.dir/clean
+CMakeFiles/_W1reless64.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/clean
+.PHONY : CMakeFiles/_W1reless64.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

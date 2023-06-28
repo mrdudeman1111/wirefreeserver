@@ -1,15 +1,20 @@
+#include <cinttypes>
 #include <iostream>
 #include <cstring>
 #include <fcntl.h>
 #include <string>
 #include <vector>
 
+#include <Headset.h>
+
 #include <stdio.h>
 #include <stdarg.h>
 
-#include <openvr_driver.h>
-
-#include <VulkanBackend.h>
+#if defined(__LINUX__) || defined(__unix__) || defined(__APPLE__)
+  #include <openvr/openvr_driver.h>
+#elif defined(_WIN32) || defined(_WIN64)
+  #include <openvr_driver.h>
+#endif
 
 #if defined( _WIN32 )
 #define HMD_DLL_EXPORT extern "C" __declspec( dllexport )
@@ -21,115 +26,12 @@
 #error "Unsupported Platform."
 #endif
 
-vr::IVRDriverLog* Logger;
 
-void DriverLog(const char* LogMessage)
-{
-    Logger->Log(LogMessage);
-}
 
-class wHeadset : public vr::IVRVirtualDisplay, public vr::ITrackedDeviceServerDriver
-{
-public:
-// ITrackedDeviceServerDriver
 
-  vr::EVRInitError Activate(uint32_t unObjectId) override
-  {
-    Vk = new VkBackend();
-    Vk->Init();
-    ObjectID = unObjectId;
-    return vr::VRInitError_None;
-  }
+/* For Debug, we just run the vrstartup.sh in ~/.steam/steam/steamapps/common/SteamVR/bin and look at it for std::cout output */
 
-  void Deactivate() override
-  {
-    Vk->Cleanup();
-    ObjectID = vr::k_unTrackedDeviceIndexInvalid;
-  }
-
-  void EnterStandby() override
-  {
-    return;
-  }
-
-  void* GetComponent(const char *pchComponentNameAndVersion) override
-  {
-    if(strcmp(pchComponentNameAndVersion, vr::IVRVirtualDisplay_Version) == 0)
-    {
-      return static_cast<vr::IVRVirtualDisplay*>(this);
-    }
-    return NULL;
-  }
-
-  bool IsValid()
-  {
-    if(Vk)
-    {
-      return true;
-    }
-
-    return false;
-  }
-
-  void DebugRequest(const char *pchRequest, char *pchResponseBuffer, uint32_t unResponseBufferSize) override
-  {
-    if(unResponseBufferSize > 0)
-    {
-      pchResponseBuffer[0] = 0;
-    }
-  }
-
-  vr::DriverPose_t GetPose() override
-  {
-    vr::DriverPose_t Ret{0};
-    Ret.poseIsValid = true;
-    Ret.result = vr::TrackingResult_Running_OK;
-    Ret.deviceIsConnected = true;
-    Ret.qWorldFromDriverRotation.w = 1;
-    Ret.qWorldFromDriverRotation.x = 0;
-    Ret.qWorldFromDriverRotation.y = 0;
-    Ret.qWorldFromDriverRotation.z = 0;
-    Ret.qDriverFromHeadRotation.w = 1;
-    Ret.qDriverFromHeadRotation.x = 0;
-    Ret.qDriverFromHeadRotation.y = 0;
-    Ret.qDriverFromHeadRotation.z = 0;
-    return Ret;
-  }
-
-  std::string GetSerialNumber()
-  {
-    return "W1reless Headset";
-  }
-
-// IVRVirtualDisplay
-  void Present(const vr::PresentInfo_t *pPresentInfo, uint32_t unPresentInfoSize) override
-  {
-    DriverLog("Presenting");
-    Texture* Tx = Vk->GetImageFromFD(pPresentInfo->backbufferTextureHandle);
-  }
-
-  void WaitForPresent() override
-  {
-  }
-
-  bool GetTimeSinceLastVsync(float* pfSecondsSinceLastVsync, uint64_t* pulFrameCounter) override
-  {
-    *pfSecondsSinceLastVsync = 0.33;
-    *pulFrameCounter = 1;
-    return false;
-  }
-
-  void Cleanup()
-  {
-    Vk->Cleanup();
-    ObjectID = 0;
-  }
-
-private:
-  VkBackend* Vk;
-
-  uint64_t ObjectID;
-};
+extern vr::IVRDriverLog* driLogger;
 
 class W1relessProvider : public vr::IServerTrackedDeviceProvider
 {
@@ -141,16 +43,23 @@ public:
   {
     VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);
 
-    Logger = vr::VRDriverLog();
-    
-    Headset = new wHeadset();
+    std::cout << "W1reless : Provider init called\n";
+
+    driLogger = vr::VRDriverLog();
+
+    Headset = new HeadsetController();
 
     if(Headset->IsValid())
     {
-      vr::VRServerDriverHost()->TrackedDeviceAdded(Headset->GetSerialNumber().c_str(), vr::TrackedDeviceClass_DisplayRedirect, (vr::ITrackedDeviceServerDriver*)Headset);
+      vr::VRServerDriverHost()->TrackedDeviceAdded(Headset->GetSerialNumber().data() , vr::TrackedDeviceClass_HMD, Headset);
+      std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nSuccess:\nHeadest WORKED!!!!!!!!!!!!\n";
+    }
+    else
+    {
+      std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nError:\nheadset invalid!!!!!!\n";
     }
 
-    // Init Headset driver ( Logical headset, video, etc )
+    // Init Headset driver ( Logical headset, video, etc)
 
     return vr::VRInitError_None;
   }
@@ -162,6 +71,19 @@ public:
 
   void RunFrame() override
   {
+    if(Headset)
+    {
+      Headset->RunFrame();
+    }
+
+    vr::VREvent_t Event{};
+    while(vr::VRServerDriverHost()->PollNextEvent(&Event, sizeof(vr::VREvent_t)))
+    {
+      if(Headset)
+      {
+        Headset->ProcessEvent(Event);
+      }
+    }
   }
 
   bool ShouldBlockStandbyMode() override
@@ -171,35 +93,35 @@ public:
 
   void EnterStandby() override
   {
-    DriverLog("EnterStandby");
   }
 
   void LeaveStandby() override
   {
-    DriverLog("LeaveStandby");
   }
 
   void Cleanup() override
   {
-    Headset->Cleanup();
+    delete Headset;
+    Headset = nullptr;
     VR_CLEANUP_SERVER_DRIVER_CONTEXT();
-    DriverLog("cleaning up now");
   }
 
 private:
-  wHeadset* Headset;
+  HeadsetController* Headset;
 };
 
 W1relessProvider Provider;
 
 HMD_DLL_EXPORT void* HmdDriverFactory(const char* pInterfaceName, int* pReturnCode)
 {
+  std::cout << "\nW1reless : Library loaded\n";
   if(strcmp(vr::IServerTrackedDeviceProvider_Version, pInterfaceName) == 0)
   {
     return &Provider;
   }
 
-  DriverLog("HmdDriverFactory failed to create a device provider for W1reless Driver");
+  FILE* file = fopen("/run/media/ethanw/LinuxGames/Repos/wirefreeserver/Output.txt", "w");
+  fwrite("Fuck", sizeof(char)*4, 1, file);
   return nullptr;
 }
 

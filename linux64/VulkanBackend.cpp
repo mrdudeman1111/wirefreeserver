@@ -4,11 +4,13 @@
 #include <string>
 #include <vector>
 
+#include <vulkan/vk_enum_string_helper.h>
 #include <VulkanBackend.h>
 #include <vulkan/vulkan.h>
+#include <vulkan/vulkan_core.h>
 
-std::vector<const char*> InstanceLayers = {"VK_KHRONOS_LAYER_validation"};
-std::vector<const char*> DeviceExtensions = {"VK_KHR_external_memory"};
+std::vector<const char*> InstanceLayers = {};
+std::vector<const char*> DeviceExtensions = {};
 
 VkBackend::VkBackend()
 {}
@@ -17,8 +19,8 @@ VkBackend::~VkBackend()
 {
     for (uint32_t i = 0; i < TexCache.size(); i++)
     {
-        vkDestroyImage(Device, TexCache[i].Image, nullptr);
-        vkFreeMemory(Device, TexCache[i].Memory, nullptr);
+      vkDestroyImage(Device, TexCache[i].Image, nullptr);
+      vkFreeMemory(Device, TexCache[i].Memory, nullptr);
     }
 
     vkDestroyDevice(Device, nullptr);
@@ -27,14 +29,19 @@ VkBackend::~VkBackend()
 
 void VkBackend::Init()
 {
+  VkResult Res;
+
+  VkApplicationInfo AppInfo{};
+  AppInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+  AppInfo.applicationVersion = VK_VERSION_1_1;
+
   VkInstanceCreateInfo InstanceCI{};
   InstanceCI.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
-  InstanceCI.enabledLayerCount = InstanceLayers.size();
-  InstanceCI.ppEnabledLayerNames = InstanceLayers.data();
+  InstanceCI.pApplicationInfo = &AppInfo;
 
-  if(vkCreateInstance(&InstanceCI, nullptr, &Instance) != VK_SUCCESS)
+  if((Res = vkCreateInstance(&InstanceCI, nullptr, &Instance)) != VK_SUCCESS)
   {
-    throw std::runtime_error("Failed to create Instance");
+    std::cout << "-----------__VULKAN__------------\nError:\nuh oh " << string_VkResult(Res) << "\n";
   }
 
   uint32_t PDevCount;
