@@ -76,6 +76,8 @@ public:
       Headset->RunFrame();
     }
 
+    DriverLog("RunFrame\n");
+
     vr::VREvent_t Event{};
     while(vr::VRServerDriverHost()->PollNextEvent(&Event, sizeof(vr::VREvent_t)))
     {

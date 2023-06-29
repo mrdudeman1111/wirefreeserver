@@ -6,7 +6,12 @@
 #include <vector>
 #include <thread>
 
-#include <openvr/openvr_driver.h>
+#ifdef _WIN32
+	#include <openvr_driver.h>
+#else
+	#include <openvr/openvr_driver.h>
+#endif
+
 #include <VulkanBackend.h>
 
 void DriverLog(const char* LogMessage);

@@ -1,8 +1,0 @@
-1. find the quest's IP
-2. find out how to get submitted frames // done, using Vulkan external images
-3. create custom compositor to handle transportation
-4. grab image from compositor and encode through AMF or NVENC // failed, using VA-API instead
-5. serialize and send through UDP/TCP port
-
-
-6. client

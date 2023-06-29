@@ -1,6 +1,11 @@
 #include <Display.h>
 #include <cstring>
+
+#ifdef _WIN32
+#include <openvr_driver.h>
+#else
 #include <openvr/openvr_driver.h>
+#endif
 
 vr::IVRDriverLog* driLogger;
 
@@ -12,6 +17,7 @@ void DriverLog(const char* LogMessage)
 VirtDisplay::VirtDisplay()
 {
   Vk = new VkBackend();
+
   char tmpSN[512];
   char tmpMN[512];
 

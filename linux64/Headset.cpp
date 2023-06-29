@@ -2,14 +2,17 @@
 
 #include <cstring>
 #include <math.h>
+
+#ifdef _WIN32
+#include <openvr_driver.h>
+#else
 #include <openvr/openvr_driver.h>
+#endif
 
 // Tracked Server Device
   vr::EVRInitError HeadsetController::Activate(uint32_t unObjectId)
   {
     ObjectId = unObjectId;
-
-    VirtDis = new VirtDisplay();
 
     if(VirtDis->IsValid())
     {
@@ -103,9 +106,10 @@
 
   void HeadsetController::RunFrame()
   {
+    DriverLog(std::to_string(ObjectId).c_str());
+    std::cout << "W1reless : " << std::to_string(ObjectId);
     vr::VRServerDriverHost()->TrackedDevicePoseUpdated(ObjectId, GetPose(), sizeof(vr::DriverPose_t));
   }
 
   void HeadsetController::ProcessEvent(const vr::VREvent_t& vrEvent)
   {}
-

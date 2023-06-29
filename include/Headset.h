@@ -1,13 +1,21 @@
 #pragma once
 
 #include <Display.h>
-#include <openvr/openvr_driver.h>
+
+#ifdef _WIN32
+	#include <openvr_driver.h>
+#else
+	#include <openvr/openvr_driver.h>
+#endif
 
 class HeadsetController : public vr::ITrackedDeviceServerDriver
 {
 public:
 
-  HeadsetController(){};
+  HeadsetController()
+  {
+	  VirtDis = new VirtDisplay();
+  };
 
   bool IsValid(){ return VirtDis->IsValid(); }
 
