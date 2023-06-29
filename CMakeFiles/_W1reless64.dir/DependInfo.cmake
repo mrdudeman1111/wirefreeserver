@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Display.cpp" "CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o" "gcc" "CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o.d"
-  "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Encoder.cpp" "CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o" "gcc" "CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o.d"
   "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Headset.cpp" "CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o" "gcc" "CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o.d"
   "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/VulkanBackend.cpp" "CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o" "gcc" "CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o.d"
   "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/driver.cpp" "CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o" "gcc" "CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o.d"

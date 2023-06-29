@@ -51,12 +51,16 @@ public:
 
     if(Headset->IsValid())
     {
-      vr::VRServerDriverHost()->TrackedDeviceAdded(Headset->GetSerialNumber().data() , vr::TrackedDeviceClass_HMD, Headset);
-      std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nSuccess:\nHeadest WORKED!!!!!!!!!!!!\n";
-    }
-    else
-    {
-      std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nError:\nheadset invalid!!!!!!\n";
+      std::string Serial = Headset->GetSerialNumber().data();
+      DriverLog(Serial.data());
+      if(vr::VRServerDriverHost()->TrackedDeviceAdded(Serial.data() , vr::TrackedDeviceClass_HMD, Headset))
+      {
+        std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nSuccess:\nHeadest WORKED!!!!!!!!!!!!\n";
+      }
+      else
+      {
+        std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nError:\nheadset invalid!!!!!!\n";
+      }
     }
 
     // Init Headset driver ( Logical headset, video, etc)
@@ -75,8 +79,6 @@ public:
     {
       Headset->RunFrame();
     }
-
-    DriverLog("RunFrame\n");
 
     vr::VREvent_t Event{};
     while(vr::VRServerDriverHost()->PollNextEvent(&Event, sizeof(vr::VREvent_t)))

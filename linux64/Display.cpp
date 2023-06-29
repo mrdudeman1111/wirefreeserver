@@ -21,8 +21,8 @@ VirtDisplay::VirtDisplay()
   char tmpSN[512];
   char tmpMN[512];
 
-  vr::VRSettings()->GetString("driver_W1reless", "serialNumber", tmpSN, 512);
-  vr::VRSettings()->GetString("driver_W1reless", "modelNumber", tmpMN, 512);
+  vr::VRSettings()->GetString("driver_W1reless", "displaySerialNumber", tmpSN, 512);
+  vr::VRSettings()->GetString("driver_W1reless", "displayModelNumber", tmpMN, 512);
 
   SerialNumber = tmpSN;
   ModelNumber = tmpMN;

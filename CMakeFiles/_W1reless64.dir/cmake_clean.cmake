@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "/home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so"
   "CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o"
   "CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o.d"
-  "CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o"
-  "CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o.d"
   "CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o"
   "CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o.d"
   "CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o"

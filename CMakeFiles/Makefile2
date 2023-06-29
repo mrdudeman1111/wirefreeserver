@@ -81,12 +81,12 @@ clean: CMakeFiles/_W1reless64.dir/clean
 CMakeFiles/_W1reless64.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target _W1reless64"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target _W1reless64"
 .PHONY : CMakeFiles/_W1reless64.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/_W1reless64.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/_W1reless64.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles 0
 .PHONY : CMakeFiles/_W1reless64.dir/rule

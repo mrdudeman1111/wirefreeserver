@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Display.h>
+#include <charconv>
 
 #ifdef _WIN32
 	#include <openvr_driver.h>
@@ -15,6 +16,21 @@ public:
   HeadsetController()
   {
 	  VirtDis = new VirtDisplay();
+
+    char tempSN[512];
+    char tempMN[512];
+
+    vr::VRSettings()->GetString("driver_W1reless", "serialNumber", tempSN, 512);
+    vr::VRSettings()->GetString("driver_W1reless", "modelNumber", tempMN, 512);
+
+    HeadsetSN = tempSN;
+    HeadsetMN = tempMN;
+
+    DriverLog("\n\n\n\n\n");
+    DriverLog(HeadsetSN.data());
+    DriverLog("\n");
+    DriverLog(HeadsetMN.data());
+    DriverLog("\n\n\n\n\n");
   };
 
   bool IsValid(){ return VirtDis->IsValid(); }
@@ -46,6 +62,6 @@ private:
   std::atomic_bool Active;
   std::atomic_uint32_t DeviceIndex;
 
-  uint64_t ObjectId;
+  uint32_t ObjectId;
 };
 

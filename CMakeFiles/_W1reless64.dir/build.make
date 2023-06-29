@@ -83,24 +83,10 @@ CMakeFiles/_W1reless64.dir/linux64/Display.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/_W1reless64.dir/linux64/Display.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Display.cpp -o CMakeFiles/_W1reless64.dir/linux64/Display.cpp.s
 
-CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o: CMakeFiles/_W1reless64.dir/flags.make
-CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o: linux64/Encoder.cpp
-CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o: CMakeFiles/_W1reless64.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o -MF CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o.d -o CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Encoder.cpp
-
-CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Encoder.cpp > CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.i
-
-CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Encoder.cpp -o CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.s
-
 CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o: CMakeFiles/_W1reless64.dir/flags.make
 CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o: linux64/Headset.cpp
 CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o: CMakeFiles/_W1reless64.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o -MF CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o.d -o CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Headset.cpp
 
 CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.s: cmake_force
 CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o: CMakeFiles/_W1reless64.dir/flags.make
 CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o: linux64/VulkanBackend.cpp
 CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o: CMakeFiles/_W1reless64.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o -MF CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o.d -o CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/VulkanBackend.cpp
 
 CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.s: cmake_force
 CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o: CMakeFiles/_W1reless64.dir/flags.make
 CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o: linux64/driver.cpp
 CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o: CMakeFiles/_W1reless64.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o -MF CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o.d -o CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/driver.cpp
 
 CMakeFiles/_W1reless64.dir/linux64/driver.cpp.i: cmake_force
@@ -142,7 +128,7 @@ CMakeFiles/_W1reless64.dir/linux64/driver.cpp.s: cmake_force
 CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o: CMakeFiles/_W1reless64.dir/flags.make
 CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o: linux64/vrDriver.cpp
 CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o: CMakeFiles/_W1reless64.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o -MF CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o.d -o CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/vrDriver.cpp
 
 CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.i: cmake_force
@@ -156,7 +142,6 @@ CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.s: cmake_force
 # Object files for target _W1reless64
 _W1reless64_OBJECTS = \
 "CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o" \
-"CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o" \
 "CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o" \
 "CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o" \
 "CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o" \
@@ -166,14 +151,13 @@ _W1reless64_OBJECTS = \
 _W1reless64_EXTERNAL_OBJECTS =
 
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o
-/home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/linux64/Encoder.cpp.o
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/build.make
 /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so: CMakeFiles/_W1reless64.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/_W1reless64.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
