@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named _W1reless64
+# Target rules for targets named _W1reless
 
 # Build rule for target.
-_W1reless64: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _W1reless64
-.PHONY : _W1reless64
+_W1reless: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _W1reless
+.PHONY : _W1reless
 
 # fast build rule for target.
-_W1reless64/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/build
-.PHONY : _W1reless64/fast
+_W1reless/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/build
+.PHONY : _W1reless/fast
 
 linux64/Display.o: linux64/Display.cpp.o
 .PHONY : linux64/Display.o
 
 # target to build an object file
 linux64/Display.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/Display.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/Display.cpp.o
 .PHONY : linux64/Display.cpp.o
 
 linux64/Display.i: linux64/Display.cpp.i
@@ -142,7 +142,7 @@ linux64/Display.i: linux64/Display.cpp.i
 
 # target to preprocess a source file
 linux64/Display.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/Display.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/Display.cpp.i
 .PHONY : linux64/Display.cpp.i
 
 linux64/Display.s: linux64/Display.cpp.s
@@ -150,7 +150,7 @@ linux64/Display.s: linux64/Display.cpp.s
 
 # target to generate assembly for a file
 linux64/Display.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/Display.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/Display.cpp.s
 .PHONY : linux64/Display.cpp.s
 
 linux64/Headset.o: linux64/Headset.cpp.o
@@ -158,7 +158,7 @@ linux64/Headset.o: linux64/Headset.cpp.o
 
 # target to build an object file
 linux64/Headset.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/Headset.cpp.o
 .PHONY : linux64/Headset.cpp.o
 
 linux64/Headset.i: linux64/Headset.cpp.i
@@ -166,7 +166,7 @@ linux64/Headset.i: linux64/Headset.cpp.i
 
 # target to preprocess a source file
 linux64/Headset.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/Headset.cpp.i
 .PHONY : linux64/Headset.cpp.i
 
 linux64/Headset.s: linux64/Headset.cpp.s
@@ -174,7 +174,7 @@ linux64/Headset.s: linux64/Headset.cpp.s
 
 # target to generate assembly for a file
 linux64/Headset.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/Headset.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/Headset.cpp.s
 .PHONY : linux64/Headset.cpp.s
 
 linux64/VulkanBackend.o: linux64/VulkanBackend.cpp.o
@@ -182,7 +182,7 @@ linux64/VulkanBackend.o: linux64/VulkanBackend.cpp.o
 
 # target to build an object file
 linux64/VulkanBackend.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.o
 .PHONY : linux64/VulkanBackend.cpp.o
 
 linux64/VulkanBackend.i: linux64/VulkanBackend.cpp.i
@@ -190,7 +190,7 @@ linux64/VulkanBackend.i: linux64/VulkanBackend.cpp.i
 
 # target to preprocess a source file
 linux64/VulkanBackend.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.i
 .PHONY : linux64/VulkanBackend.cpp.i
 
 linux64/VulkanBackend.s: linux64/VulkanBackend.cpp.s
@@ -198,7 +198,7 @@ linux64/VulkanBackend.s: linux64/VulkanBackend.cpp.s
 
 # target to generate assembly for a file
 linux64/VulkanBackend.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/VulkanBackend.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.s
 .PHONY : linux64/VulkanBackend.cpp.s
 
 linux64/driver.o: linux64/driver.cpp.o
@@ -206,7 +206,7 @@ linux64/driver.o: linux64/driver.cpp.o
 
 # target to build an object file
 linux64/driver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/driver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/driver.cpp.o
 .PHONY : linux64/driver.cpp.o
 
 linux64/driver.i: linux64/driver.cpp.i
@@ -214,7 +214,7 @@ linux64/driver.i: linux64/driver.cpp.i
 
 # target to preprocess a source file
 linux64/driver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/driver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/driver.cpp.i
 .PHONY : linux64/driver.cpp.i
 
 linux64/driver.s: linux64/driver.cpp.s
@@ -222,7 +222,7 @@ linux64/driver.s: linux64/driver.cpp.s
 
 # target to generate assembly for a file
 linux64/driver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/driver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/driver.cpp.s
 .PHONY : linux64/driver.cpp.s
 
 linux64/vrDriver.o: linux64/vrDriver.cpp.o
@@ -230,7 +230,7 @@ linux64/vrDriver.o: linux64/vrDriver.cpp.o
 
 # target to build an object file
 linux64/vrDriver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.o
 .PHONY : linux64/vrDriver.cpp.o
 
 linux64/vrDriver.i: linux64/vrDriver.cpp.i
@@ -238,7 +238,7 @@ linux64/vrDriver.i: linux64/vrDriver.cpp.i
 
 # target to preprocess a source file
 linux64/vrDriver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.i
 .PHONY : linux64/vrDriver.cpp.i
 
 linux64/vrDriver.s: linux64/vrDriver.cpp.s
@@ -246,7 +246,7 @@ linux64/vrDriver.s: linux64/vrDriver.cpp.s
 
 # target to generate assembly for a file
 linux64/vrDriver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless64.dir/build.make CMakeFiles/_W1reless64.dir/linux64/vrDriver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/_W1reless.dir/build.make CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.s
 .PHONY : linux64/vrDriver.cpp.s
 
 # Help Target
@@ -257,7 +257,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... _W1reless64"
+	@echo "... _W1reless"
 	@echo "... linux64/Display.o"
 	@echo "... linux64/Display.i"
 	@echo "... linux64/Display.s"
