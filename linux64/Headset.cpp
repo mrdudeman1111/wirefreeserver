@@ -17,7 +17,8 @@
 
     if(VirtDis->IsValid())
     {
-      vr::VRServerDriverHost()->TrackedDeviceAdded(VirtDis->GetSerialNumber().c_str(), vr::TrackedDeviceClass_DisplayRedirect, VirtDis);
+      DriverLog("Virtual Display is valid\n");
+      // vr::VRServerDriverHost()->TrackedDeviceAdded(VirtDis->GetSerialNumber().c_str(), vr::TrackedDeviceClass_DisplayRedirect, VirtDis);
     }
     else
     {

@@ -10,9 +10,9 @@ IF(WIN32)
 
 	link_directories(D:/Vulkan/Lib D:/openvr/lib/win64 D:/openvr/bin/win64)
 ELSE()
-	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ~.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
-	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ~.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
-	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ~.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
+	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ~/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
+	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ~/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
+	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ~/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64)
 
 	find_package(Vulkan REQUIRED)
 ENDIF()

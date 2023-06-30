@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.pdb"
+  "/home/ethanw/.steam/steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so"
   "CMakeFiles/_W1reless.dir/linux64/Display.cpp.o"
   "CMakeFiles/_W1reless.dir/linux64/Display.cpp.o.d"
   "CMakeFiles/_W1reless.dir/linux64/Headset.cpp.o"
@@ -9,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/_W1reless.dir/linux64/driver.cpp.o.d"
   "CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.o"
   "CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.o.d"
-  "steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.pdb"
-  "steam/steamapps/common/SteamVR/drivers/W1reless/bin/linux64/driver_W1reless.so"
 )
 
 # Per-language clean rules from dependency scanning.
