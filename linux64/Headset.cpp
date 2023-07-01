@@ -13,28 +13,6 @@
   vr::EVRInitError HeadsetController::Activate(uint32_t unObjectId)
   {
     ObjectId = unObjectId;
-    /*
-    if (VirtDis->IsValid())
-    {
-      DriverLog("Virtual Display is valid\n");
-      std::string VirtDisSerial = VirtDis->GetSerialNumber().c_str();
-      if(vr::VRServerDriverHost()->TrackedDeviceAdded(VirtDisSerial.data(), vr::TrackedDeviceClass_DisplayRedirect, VirtDis))
-      {
-          std::cout << "W1reless : Succeeded in adding virtual display\n";
-          DriverLog("W1reless : Succeeded in adding virtual display");
-      }
-      else
-      {
-          std::cout << "W1reless : Failed to add virtual display component\n";
-          DriverLog("Failed to add virtual display component");
-      }
-    }
-    else
-    {
-        std::cout << "W1reless : Failed to add virtual display component\n";
-        DriverLog("Failed to add virtual display component");
-    }
-    */
 
     vr::PropertyContainerHandle_t Container = vr::VRProperties()->TrackedDeviceToPropertyContainer(unObjectId);
 

@@ -27,12 +27,6 @@
 #endif
 
 
-/* 
-*                                   issue is probably an invalid pointer!!
-*/
-
-
-
 
 /* For Debug, we just run the vrstartup.sh in ~/.steam/steam/steamapps/common/SteamVR/bin and look at it for std::cout output */
 
@@ -53,8 +47,6 @@ public:
     // std::cout << "W1reless : Provider init called\n";
 
     driLogger = vr::VRDriverLog();
-
-    DriverLog("W1reless : break1");
 
     Headset = new HeadsetController();
 
@@ -84,8 +76,6 @@ public:
         std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nError:\nheadset invalid!!!!!!\n";
       }
     }
-
-    DriverLog("W1reless : break2");
 
     // Init Headset driver ( Logical headset, video, etc)
 
