@@ -15,7 +15,7 @@ public:
 
   HeadsetController()
   {
-	  VirtDis = new VirtDisplay();
+	VirtDis = new VirtDisplay();
 
     char tempSN[512];
     char tempMN[512];
@@ -25,12 +25,6 @@ public:
 
     HeadsetSN = tempSN;
     HeadsetMN = tempMN;
-
-    DriverLog("\n\n\n\n\n");
-    DriverLog(HeadsetSN.data());
-    DriverLog("\n");
-    DriverLog(HeadsetMN.data());
-    DriverLog("\n\n\n\n\n");
   };
 
   bool IsValid(){ return VirtDis->IsValid(); }
@@ -47,8 +41,8 @@ public:
   void RunFrame();
   void ProcessEvent(const vr::VREvent_t& vrEvent);
 
-private:
   VirtDisplay* VirtDis;
+private:
 
   std::string HeadsetMN;
   std::string HeadsetSN;

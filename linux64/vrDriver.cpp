@@ -27,11 +27,18 @@
 #endif
 
 
+/* 
+*                                   issue is probably an invalid pointer!!
+*/
+
+
 
 
 /* For Debug, we just run the vrstartup.sh in ~/.steam/steam/steamapps/common/SteamVR/bin and look at it for std::cout output */
 
 extern vr::IVRDriverLog* driLogger;
+
+std::string HeadsetSerial;
 
 class W1relessProvider : public vr::IServerTrackedDeviceProvider
 {
@@ -43,25 +50,42 @@ public:
   {
     VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);
 
-    std::cout << "W1reless : Provider init called\n";
+    // std::cout << "W1reless : Provider init called\n";
 
     driLogger = vr::VRDriverLog();
+
+    DriverLog("W1reless : break1");
 
     Headset = new HeadsetController();
 
     if(Headset->IsValid())
     {
-      std::string Serial = Headset->GetSerialNumber().data();
-      DriverLog(Serial.data());
-      if(vr::VRServerDriverHost()->TrackedDeviceAdded(Serial.data() , vr::TrackedDeviceClass_HMD, Headset))
+      HeadsetSerial = Headset->GetSerialNumber().data();
+      if(vr::VRServerDriverHost()->TrackedDeviceAdded(HeadsetSerial.data() , vr::TrackedDeviceClass_HMD, Headset))
       {
         std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nSuccess:\nHeadest WORKED!!!!!!!!!!!!\n";
+        if(Headset->VirtDis->IsValid())
+        {
+            DriverLog("Virtual display is valid");
+            std::string DisplaySerial = Headset->VirtDis->GetSerialNumber().data();
+            if (vr::VRServerDriverHost()->TrackedDeviceAdded(DisplaySerial.data(), vr::TrackedDeviceClass_DisplayRedirect, Headset->VirtDis))
+            {
+                DriverLog("Virtual display successfully added");
+            }
+            else
+            {
+                DriverLog("Virtual display unsuccessfully added");
+            }
+        }
       }
       else
       {
+         vr::VRDriverLog()->Log("W1reless : ---------------------__W1reless_DRIVER__------------------\nError:\nheadset invalid!!!!!!\n");
         std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nError:\nheadset invalid!!!!!!\n";
       }
     }
+
+    DriverLog("W1reless : break2");
 
     // Init Headset driver ( Logical headset, video, etc)
 
@@ -118,14 +142,17 @@ W1relessProvider Provider;
 
 HMD_DLL_EXPORT void* HmdDriverFactory(const char* pInterfaceName, int* pReturnCode)
 {
-  std::cout << "\nW1reless : Library loaded\n";
+    std::cout << "W1reless : HmdDriverFactory Called\n";
   if(strcmp(vr::IServerTrackedDeviceProvider_Version, pInterfaceName) == 0)
   {
     return &Provider;
   }
 
+#ifndef _WIN32
   FILE* file = fopen("/run/media/ethanw/LinuxGames/Repos/wirefreeserver/Output.txt", "w");
   fwrite("Fuck", sizeof(char)*4, 1, file);
+#endif
+
   return nullptr;
 }
 

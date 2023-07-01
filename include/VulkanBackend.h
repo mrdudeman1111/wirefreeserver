@@ -22,9 +22,9 @@ class VkBackend
 public:
     VkBackend();
     ~VkBackend();
-    VkDevice Device;
-    VkPhysicalDevice PDev;
-    VkInstance Instance;
+    VkDevice Device = VK_NULL_HANDLE;
+    VkPhysicalDevice PDev = VK_NULL_HANDLE;
+    VkInstance Instance = VK_NULL_HANDLE;
 
     std::map<uint64_t, Texture> TexCache;
 

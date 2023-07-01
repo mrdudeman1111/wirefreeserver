@@ -21,11 +21,12 @@ VirtDisplay::VirtDisplay()
   char tmpSN[512];
   char tmpMN[512];
 
-  vr::VRSettings()->GetString("driver_W1reless", "displaySerialNumber", tmpSN, 512);
-  vr::VRSettings()->GetString("driver_W1reless", "displayModelNumber", tmpMN, 512);
+  vr::VRSettings()->GetString("driver_W1reless_Display", "serialNumber", tmpSN, 512);
+  vr::VRSettings()->GetString("driver_W1reless_Display", "modelNumber", tmpMN, 512);
 
   SerialNumber = tmpSN;
   ModelNumber = tmpMN;
+
   SerialNumber.shrink_to_fit();
   ModelNumber.shrink_to_fit();
 }
@@ -55,10 +56,27 @@ VirtDisplay::~VirtDisplay()
 // Tracked Device Driver
   vr::EVRInitError VirtDisplay::Activate(uint32_t unObjectId)
   {
+    DriverLog("Virtual display activate");
     ObjectId = unObjectId;
 
-    Vk = new VkBackend();
     Vk->Init();
+
+    vr::PropertyContainerHandle_t Container = vr::VRProperties()->TrackedDeviceToPropertyContainer(unObjectId);
+   
+    const float IPD = vr::VRSettings()->GetFloat(vr::k_pch_SteamVR_Section, vr::k_pch_SteamVR_IPD_Float);
+    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_UserIpdMeters_Float, IPD);
+
+    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_DisplayFrequency_Float, 90.f);
+
+    // the distance between eyes and display
+    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_UserHeadToEyeDepthMeters_Float, 0.f);
+
+    // the time between present() and actual presentation.
+    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_SecondsFromVsyncToPhotons_Float, 0.11);
+
+    vr::VRProperties()->SetBoolProperty(Container, vr::Prop_IsOnDesktop_Bool, false);
+
+    vr::VRProperties()->SetBoolProperty(Container, vr::Prop_DisplayDebugMode_Bool, true);
 
     return vr::VRInitError_None;
   }

@@ -12,41 +12,39 @@
 // Tracked Server Device
   vr::EVRInitError HeadsetController::Activate(uint32_t unObjectId)
   {
-    
     ObjectId = unObjectId;
-
-    if(VirtDis->IsValid())
+    /*
+    if (VirtDis->IsValid())
     {
       DriverLog("Virtual Display is valid\n");
-      // vr::VRServerDriverHost()->TrackedDeviceAdded(VirtDis->GetSerialNumber().c_str(), vr::TrackedDeviceClass_DisplayRedirect, VirtDis);
+      std::string VirtDisSerial = VirtDis->GetSerialNumber().c_str();
+      if(vr::VRServerDriverHost()->TrackedDeviceAdded(VirtDisSerial.data(), vr::TrackedDeviceClass_DisplayRedirect, VirtDis))
+      {
+          std::cout << "W1reless : Succeeded in adding virtual display\n";
+          DriverLog("W1reless : Succeeded in adding virtual display");
+      }
+      else
+      {
+          std::cout << "W1reless : Failed to add virtual display component\n";
+          DriverLog("Failed to add virtual display component");
+      }
     }
     else
     {
-      std::cout << "W1reless : Failed to add Virtual display as component";
+        std::cout << "W1reless : Failed to add virtual display component\n";
+        DriverLog("Failed to add virtual display component");
     }
+    */
 
     vr::PropertyContainerHandle_t Container = vr::VRProperties()->TrackedDeviceToPropertyContainer(unObjectId);
 
     // tell the frontend the model number
     vr::VRProperties()->SetStringProperty(Container, vr::Prop_ModelNumber_String, HeadsetMN.c_str());
 
-    const float IPD = vr::VRSettings()->GetFloat(vr::k_pch_SteamVR_Section, vr::k_pch_SteamVR_IPD_Float);
-    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_UserIpdMeters_Float, IPD);
-
-    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_DisplayFrequency_Float, 90.f);
-
-    // the distance between eyes and display
-    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_UserHeadToEyeDepthMeters_Float, 0.f);
-
-    // the time between present() and actual presentation.
-    vr::VRProperties()->SetFloatProperty(Container, vr::Prop_SecondsFromVsyncToPhotons_Float, 0.11);
-
-    vr::VRProperties()->SetBoolProperty(Container, vr::Prop_IsOnDesktop_Bool, false);
-
-    vr::VRProperties()->SetBoolProperty(Container, vr::Prop_DisplayDebugMode_Bool, true);
-
     // set the input profile
     vr::VRProperties()->SetStringProperty(Container, vr::Prop_InputProfilePath_String, "{W1reless}/input/W1reless_profile.json");
+
+    DriverLog("Headset Activated");
 
     // Setup Inputs
 

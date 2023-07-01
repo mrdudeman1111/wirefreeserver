@@ -59,6 +59,14 @@ void VkBackend::Init()
       break;
     }
   }
+
+  VkDeviceCreateInfo DevCI{};
+  DevCI.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+
+  if((Res = vkCreateDevice(PDev, &DevCI, nullptr, &Device)) != VK_SUCCESS)
+  {
+      throw std::runtime_error("Failed to create VkDevice with error : " + std::to_string(Res));
+  }
 }
 
 void VkBackend::Cleanup()
