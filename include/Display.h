@@ -65,3 +65,26 @@ private:
   std::string ModelNumber = "Rev-001";
 };
 
+class W1relessDisplay : public vr::IVRDisplayComponent
+{
+public:
+	// Display Component
+	void GetWindowBounds(int32_t* pX, int32_t* pY, uint32_t* pWidth, uint32_t* pHeight) override;
+	bool IsDisplayOnDesktop() override { return false; }
+	bool IsDisplayRealDisplay() override { return true; }
+	void GetRecommendedRenderTargetSize(uint32_t* pWidth, uint32_t* pHeight) override;
+	void GetEyeOutputViewport(vr::EVREye eEye, uint32_t* pX, uint32_t* pY, uint32_t* pWidth, uint32_t* pHeight) override;
+	void GetProjectionRaw(vr::EVREye eEye, float* pfLeft, float* pfRight, float* pfTop, float* pfBottom) override;
+	vr::DistortionCoordinates_t ComputeDistortion(vr::EVREye eEye, float fU, float fV) override;
+
+	const std::string GetSerial() { return SerialNumber; }
+private:
+
+	uint32_t Width = 3664;
+	uint32_t Height = 1920;
+
+	float IPD = 0.065;
+
+	std::string SerialNumber = "W1reless-Display-Component";
+	std::string ModelNumber = "W1reless-DComp-120";
+};

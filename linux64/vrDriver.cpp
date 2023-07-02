@@ -56,7 +56,7 @@ public:
       if(vr::VRServerDriverHost()->TrackedDeviceAdded(HeadsetSerial.data() , vr::TrackedDeviceClass_HMD, Headset))
       {
         std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nSuccess:\nHeadest WORKED!!!!!!!!!!!!\n";
-        if(Headset->VirtDis->IsValid())
+        if (Headset->VirtDis->IsValid())
         {
           DriverLog("Virtual display is valid");
           std::string DisplaySerial = Headset->VirtDis->GetSerialNumber().data();
@@ -142,6 +142,10 @@ HMD_DLL_EXPORT void* HmdDriverFactory(const char* pInterfaceName, int* pReturnCo
     return &Provider;
   }
 
+  if (pReturnCode)
+  {
+    *pReturnCode = vr::VRInitError_Init_InterfaceNotFound;
+  }
 #ifndef _WIN32
   FILE* file = fopen("/run/media/ethanw/LinuxGames/Repos/wirefreeserver/Output.txt", "w");
   fwrite("Fuck", sizeof(char)*4, 1, file);

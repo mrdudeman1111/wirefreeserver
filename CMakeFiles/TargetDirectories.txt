@@ -1,3 +1,0 @@
-/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles/_W1reless.dir
-/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles/edit_cache.dir
-/run/media/ethanw/LinuxGames/Repos/wirefreeserver/CMakeFiles/rebuild_cache.dir

@@ -130,7 +130,9 @@ VirtDisplay::~VirtDisplay()
   }
 
   void VirtDisplay::RunFrame()
-  {}
+  {
+     vr::VRServerDriverHost()->TrackedDevicePoseUpdated(ObjectId, GetPose(), sizeof(vr::DriverPose_t));
+  }
 
   bool VirtDisplay::IsValid()
   {
@@ -152,3 +154,45 @@ VirtDisplay::~VirtDisplay()
     Vk->Cleanup();
   }
 
+
+
+  void W1relessDisplay::GetWindowBounds(int32_t* pX, int32_t* pY, uint32_t* pWidth, uint32_t* pHeight)
+  {
+      *pWidth = Width;
+      *pHeight = Height;
+      *pX = 0;
+      *pY = 0;
+  }
+
+  void W1relessDisplay::GetRecommendedRenderTargetSize(uint32_t* pWidth, uint32_t* pHeight)
+  {
+      *pWidth = Width;
+      *pHeight = Height;
+  }
+  void W1relessDisplay::GetEyeOutputViewport(vr::EVREye eEye, uint32_t* pX, uint32_t* pY, uint32_t* pWidth, uint32_t* pHeight)
+  {
+      *pWidth = Width / 2;
+      *pHeight = Height;
+      *pY = 0;
+      *pX = (eEye == vr::Eye_Left) ? 0 : (Width / 2);
+  }
+
+  void W1relessDisplay::GetProjectionRaw(vr::EVREye eEye, float* pfLeft, float* pfRight, float* pfTop, float* pfBottom)
+  {
+      *pfLeft = -1.f;
+      *pfRight = 1.f;
+      *pfTop = -1.f;
+      *pfBottom = 1.f;
+  }
+  vr::DistortionCoordinates_t W1relessDisplay::ComputeDistortion(vr::EVREye eEye, float fU, float fV)
+  {
+      vr::DistortionCoordinates_t Coords{};
+      Coords.rfRed[0] = fU;
+      Coords.rfRed[1] = fV;
+      Coords.rfGreen[0] = fU;
+      Coords.rfGreen[1] = fV;
+      Coords.rfBlue[0] = fU;
+      Coords.rfBlue[1] = fV;
+
+      return Coords;
+  }
