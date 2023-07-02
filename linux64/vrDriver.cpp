@@ -58,16 +58,20 @@ public:
         std::cout << "W1reless : ---------------------__W1reless_DRIVER__------------------\nSuccess:\nHeadest WORKED!!!!!!!!!!!!\n";
         if(Headset->VirtDis->IsValid())
         {
-            DriverLog("Virtual display is valid");
-            std::string DisplaySerial = Headset->VirtDis->GetSerialNumber().data();
-            if (vr::VRServerDriverHost()->TrackedDeviceAdded(DisplaySerial.data(), vr::TrackedDeviceClass_DisplayRedirect, Headset->VirtDis))
-            {
-                DriverLog("Virtual display successfully added");
-            }
-            else
-            {
-                DriverLog("Virtual display unsuccessfully added");
-            }
+          DriverLog("Virtual display is valid");
+          std::string DisplaySerial = Headset->VirtDis->GetSerialNumber().data();
+          if(vr::VRServerDriverHost()->TrackedDeviceAdded(DisplaySerial.data(), vr::TrackedDeviceClass_DisplayRedirect, Headset->VirtDis))
+          {
+            DriverLog("Virtual display successfully added");
+          }
+          else
+          {
+            DriverLog("Virtual display unsuccessfully added");
+          }
+        }
+        else
+        {
+          DriverLog("Virtual Display is Invalid");
         }
       }
       else

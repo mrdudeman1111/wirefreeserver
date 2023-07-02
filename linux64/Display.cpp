@@ -17,7 +17,6 @@ void DriverLog(const char* LogMessage)
 VirtDisplay::VirtDisplay()
 {
   Vk = new VkBackend();
-
   char tmpSN[512];
   char tmpMN[512];
 
@@ -29,6 +28,8 @@ VirtDisplay::VirtDisplay()
 
   SerialNumber.shrink_to_fit();
   ModelNumber.shrink_to_fit();
+
+  std::cout << "W1reless: Virtual Display Serial Number: " << SerialNumber.data() << "\nW1reless: Virtual Display Number: " << ModelNumber.data() << '\n';
 }
 
 VirtDisplay::~VirtDisplay()
