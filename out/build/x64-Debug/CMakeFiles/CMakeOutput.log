@@ -50,16 +50,16 @@ The CXX compiler identification is MSVC, found in "D:/Projects/wirefreeserver/ou
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: D:/Projects/wirefreeserver/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):d:\programs\vs19\common7\ide\commonextensions\microsoft\cmake\Ninja\ninja.exe cmTC_cc9ce && [1/2] Building C object CMakeFiles\cmTC_cc9ce.dir\CMakeCCompilerABI.c.obj
-[2/2] Linking C executable cmTC_cc9ce.exe
+Run Build Command(s):D:\PROGRAMS\VS19\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe cmTC_229de && [1/2] Building C object CMakeFiles\cmTC_229de.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_229de.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: D:/Projects/wirefreeserver/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):d:\programs\vs19\common7\ide\commonextensions\microsoft\cmake\Ninja\ninja.exe cmTC_3aa0a && [1/2] Building CXX object CMakeFiles\cmTC_3aa0a.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_3aa0a.exe
+Run Build Command(s):D:\PROGRAMS\VS19\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe cmTC_d9185 && [1/2] Building CXX object CMakeFiles\cmTC_d9185.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_d9185.exe
 
 
 

@@ -59,15 +59,6 @@ public:
         if (Headset->VirtDis->IsValid())
         {
           DriverLog("Virtual display is valid");
-          std::string DisplaySerial = Headset->VirtDis->GetSerialNumber().data();
-          if(vr::VRServerDriverHost()->TrackedDeviceAdded(DisplaySerial.data(), vr::TrackedDeviceClass_DisplayRedirect, Headset->VirtDis))
-          {
-            DriverLog("Virtual display successfully added");
-          }
-          else
-          {
-            DriverLog("Virtual display unsuccessfully added");
-          }
         }
         else
         {

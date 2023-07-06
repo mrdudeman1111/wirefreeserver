@@ -1,23 +1,8 @@
 # ninja log v5
-19	290	7100309898991964	CMakeFiles/_W1reless.dir/linux64/driver.cpp.obj	29e384dffa25e0db
-15	784	7100309903913052	CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.obj	2a1114e547a95d67
-6	688	7100309902942827	CMakeFiles/_W1reless.dir/linux64/Display.cpp.obj	f76a9cbdb04f13b4
-1	690	7100309902942827	CMakeFiles/_W1reless.dir/linux64/Headset.cpp.obj	90637d09e7360fe7
-12	76	7100309972963173	CMakeFiles/_W1reless.dir/linux64/driver.cpp.obj	29e384dffa25e0db
-2	642	7100309978605068	CMakeFiles/_W1reless.dir/linux64/Headset.cpp.obj	90637d09e7360fe7
-8	645	7100309978635087	CMakeFiles/_W1reless.dir/linux64/Display.cpp.obj	f76a9cbdb04f13b4
-16	718	7100309979365330	CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.obj	2a1114e547a95d67
-21	86	7100310127203865	CMakeFiles/_W1reless.dir/linux64/driver.cpp.obj	29e384dffa25e0db
-1	696	7100310133285244	CMakeFiles/_W1reless.dir/linux64/Display.cpp.obj	f76a9cbdb04f13b4
-7	730	7100310133635410	CMakeFiles/_W1reless.dir/linux64/Headset.cpp.obj	90637d09e7360fe7
-11	733	7100310133655315	CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.obj	53f1b4e16d72aea5
-16	776	7100310134085401	CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.obj	2a1114e547a95d67
-776	2928	7100310134085401	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.dll	cc24595fef6f0255
-776	2928	7100310134085401	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.lib	cc24595fef6f0255
-16	358	7100316600744860	CMakeFiles/_W1reless.dir/linux64/driver.cpp.obj	29e384dffa25e0db
-2	1035	7100316607448690	CMakeFiles/_W1reless.dir/linux64/Display.cpp.obj	f76a9cbdb04f13b4
-7	1058	7100316607701816	CMakeFiles/_W1reless.dir/linux64/Headset.cpp.obj	90637d09e7360fe7
-21	1066	7100316607786946	CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.obj	53f1b4e16d72aea5
-11	1121	7100316608337056	CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.obj	2a1114e547a95d67
-1121	2869	7100316608337056	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.dll	cc24595fef6f0255
-1121	2869	7100316608337056	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.lib	cc24595fef6f0255
+1881	3673	7103269483723887	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.lib	6d4f2724e85b1b0e
+1	1881	7103269483723887	CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.obj	e49fb1f9faca4bb9
+14	805	7103219500021370	CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.obj	c03db0beb8981981
+15	358	7102059805321608	CMakeFiles/_W1reless.dir/linux64/driver.cpp.obj	e22d0e7ccdad40c6
+8	799	7103219499881332	CMakeFiles/_W1reless.dir/linux64/Display.cpp.obj	58300571599faff1
+2	804	7103219500011359	CMakeFiles/_W1reless.dir/linux64/Headset.cpp.obj	a13da508696d830a
+1881	3673	7103269483723887	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.dll	6d4f2724e85b1b0e

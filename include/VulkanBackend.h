@@ -4,6 +4,7 @@
 #include <map>
 #include <iostream>
 #include <string>
+
 #include <vulkan/vulkan.h>
 
 struct Texture
@@ -20,13 +21,8 @@ struct Texture
 class VkBackend
 {
 public:
-    VkBackend();
+    VkBackend(uint32_t inWidth, uint32_t inHeight);
     ~VkBackend();
-    VkDevice Device = VK_NULL_HANDLE;
-    VkPhysicalDevice PDev = VK_NULL_HANDLE;
-    VkInstance Instance = VK_NULL_HANDLE;
-
-    std::map<uint64_t, Texture> TexCache;
 
     /// Eventually I will add Params Height, Width, BitRate, Networking Protocol.
     void Init();
@@ -36,5 +32,17 @@ public:
     int GetMemIndex(uint32_t MemType);
 
     Texture* GetImageFromFD(uint64_t FD);
+
+    void SyncImage(uint64_t FD);
+
+private:
+    std::map<uint64_t, Texture> TexCache;
+
+    uint32_t Width;
+    uint32_t Height;
+
+    VkDevice Device = VK_NULL_HANDLE;
+    VkPhysicalDevice PDev = VK_NULL_HANDLE;
+    VkInstance Instance = VK_NULL_HANDLE;
 };
 
