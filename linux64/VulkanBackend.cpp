@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <vulkan/vulkan_core.h>
 
 #ifdef _WIN32
 	#define VK_USE_PLATFORM_WIN32_KHR
@@ -16,7 +17,7 @@
 std::vector<const char*> InstanceExtensions = { "VK_KHR_get_physical_device_properties2", "VK_KHR_external_memory_capabilities"};
 
 #ifdef _WIN32
-std::vector<const char*> DeviceExtensions = {"VK_KHR_external_memory_win32", "VK_KHR_win32_keyed_mutex"};
+std::vector<const char*> DeviceExtensions = {"VK_KHR_external_memory", "VK_KHR_external_memory_win32", "VK_KHR_win32_keyed_mutex"};
 #else
 std::vector<const char*> DeviceExtensions = {};
 #endif
@@ -110,122 +111,136 @@ int VkBackend::GetMemIndex(uint32_t MemType)
 
 Texture* VkBackend::GetImageFromFD(uint64_t FD)
 {
-    VkResult Res;
+  VkResult Res;
 
-    uint32_t TargetIndex;
-    if (TexCache.count(FD))
-    {
-        return &TexCache[FD];
-    }
+  uint32_t TargetIndex;
+  if (TexCache.count(FD))
+  {
+      return &TexCache[FD];
+  }
 
-    Texture ExtImage;
-    ExtImage.SharedHandle = FD;
+  Texture ExtImage;
+  ExtImage.SharedHandle = FD;
 
-    VkExtent3D Extent = { Width, Height, 1 };
+  VkExtent3D Extent = { Width, Height, 1 };
 
-    VkExternalMemoryImageCreateInfo ExtImageCI{};
-    ExtImageCI.sType = VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO;
-    ExtImageCI.handleTypes = VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT;
+  VkExternalMemoryImageCreateInfo ExtImageCI{};
+  ExtImageCI.sType = VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO;
+  ExtImageCI.handleTypes = VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT;
 
-    VkImageCreateInfo ImageCI{};
-    ImageCI.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
-    ImageCI.pNext = &ExtImageCI;
-    ImageCI.tiling = VK_IMAGE_TILING_LINEAR;
-    ImageCI.usage = VK_IMAGE_USAGE_SAMPLED_BIT;
-    ImageCI.format = VK_FORMAT_R8G8B8A8_UNORM;
-    ImageCI.extent = Extent;
-    ImageCI.samples = VK_SAMPLE_COUNT_1_BIT;
-    ImageCI.imageType = VK_IMAGE_TYPE_2D;
-    ImageCI.mipLevels = 1;
-    ImageCI.arrayLayers = 1;
-    ImageCI.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
-    ImageCI.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+  VkImageCreateInfo ImageCI{};
+  ImageCI.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+  ImageCI.pNext = &ExtImageCI;
+  ImageCI.tiling = VK_IMAGE_TILING_LINEAR;
+  ImageCI.usage = VK_IMAGE_USAGE_SAMPLED_BIT;
+  ImageCI.format = VK_FORMAT_R8G8B8A8_UNORM;
+  ImageCI.extent = Extent;
+  ImageCI.samples = VK_SAMPLE_COUNT_1_BIT;
+  ImageCI.imageType = VK_IMAGE_TYPE_2D;
+  ImageCI.mipLevels = 1;
+  ImageCI.arrayLayers = 1;
+  ImageCI.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+  ImageCI.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 
-    if (vkCreateImage(Device, &ImageCI, nullptr, &ExtImage.Image) != VK_SUCCESS)
-    {
-        throw std::runtime_error("Failed to create image");
-    }
+  if (vkCreateImage(Device, &ImageCI, nullptr, &ExtImage.Image) != VK_SUCCESS)
+  {
+      throw std::runtime_error("Failed to create image");
+  }
 
-    VkMemoryRequirements MemReq{};
+  VkMemoryRequirements MemReq{};
 
-    vkGetImageMemoryRequirements(Device, ExtImage.Image, &MemReq);
+  vkGetImageMemoryRequirements(Device, ExtImage.Image, &MemReq);
 
-    VkMemoryDedicatedAllocateInfoKHR DedAlloc{};
-    DedAlloc.sType = VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_KHR;
-    DedAlloc.image = ExtImage.Image;
+  VkMemoryDedicatedAllocateInfoKHR DedAlloc{};
+  DedAlloc.sType = VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_KHR;
+  DedAlloc.image = ExtImage.Image;
 
 #ifdef _WIN32
-    VkImportMemoryWin32HandleInfoKHR ImportInfo{};
-    ImportInfo.sType = VK_STRUCTURE_TYPE_EXPORT_MEMORY_WIN32_HANDLE_INFO_KHR;
-    ImportInfo.pNext = &DedAlloc;
-    ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT;
-    ImportInfo.handle = (HANDLE)FD;
+  VkImportMemoryWin32HandleInfoKHR ImportInfo{};
+  ImportInfo.sType = VK_STRUCTURE_TYPE_EXPORT_MEMORY_WIN32_HANDLE_INFO_KHR;
+  ImportInfo.pNext = &DedAlloc;
+  ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT;
+  ImportInfo.handle = (HANDLE)FD;
 #else
-    VkImportMemoryFdInfoKHR ImportInfo{};
-    ImportInfo.sType = VK_STRUCTURE_TYPE_IMPORT_MEMORY_FD_INFO_KHR;
-    ImportInfo.pNext = &DedAlloc;
-    ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT;
-    ImportInfo.fd = FD;
+  VkImportMemoryFdInfoKHR ImportInfo{};
+  ImportInfo.sType = VK_STRUCTURE_TYPE_IMPORT_MEMORY_FD_INFO_KHR;
+  ImportInfo.pNext = &DedAlloc;
+  ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT;
+  ImportInfo.fd = FD;
 #endif
 
-    VkMemoryAllocateInfo AllocInfo{};
-    AllocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+  VkMemoryAllocateInfo AllocInfo{};
+  AllocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+  AllocInfo.pNext = &ImportInfo;
+  AllocInfo.allocationSize = MemReq.size;
+  AllocInfo.memoryTypeIndex = GetMemIndex(MemReq.memoryTypeBits);
+
+#ifdef _WIN32
+  if ((Res = vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory)) != VK_SUCCESS)
+  {
+  DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR handle type\n");
+
+    ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR;
     AllocInfo.pNext = &ImportInfo;
-    AllocInfo.allocationSize = MemReq.size;
-    AllocInfo.memoryTypeIndex = GetMemIndex(MemReq.memoryTypeBits);
 
     if ((Res = vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory)) != VK_SUCCESS)
     {
-        DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR handle type\n");
+      DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR handle type\n");
 
-        ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR;
+      ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR;
+      AllocInfo.pNext = &ImportInfo;
+
+      if ((Res = vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory)) != VK_SUCCESS)
+      {
+        DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR handle type with error ");
+
+        ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR;
         AllocInfo.pNext = &ImportInfo;
 
         if ((Res = vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory)) != VK_SUCCESS)
         {
-            DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR handle type\n");
-
-            ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR;
-            AllocInfo.pNext = &ImportInfo;
-
-            if ((Res = vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory)) != VK_SUCCESS)
-            {
-                DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR handle type with error ");
-
-                ImportInfo.handleType = VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR;
-                AllocInfo.pNext = &ImportInfo;
-
-                if ((Res = vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory)) != VK_SUCCESS)
-                {
-                    DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR handle type\n");
-                }
-                else
-                {
-                    DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR handle type\n");
-                }
-            }
-            else
-            {
-                DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR handle type\n");
-            }
+          DriverLog("W1reless : Failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR handle type\n");
         }
         else
         {
-            DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDlE_TYPE_D3D11_TEXTURE_BIT_KHR handle type\n");
+          DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR handle type\n");
         }
+      }
+      else
+      {
+        DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR handle type\n");
+      }
     }
     else
     {
-        DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR handleType\n");
+      DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDlE_TYPE_D3D11_TEXTURE_BIT_KHR handle type\n");
     }
+  }
+  else
+  {
+    DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR handle type\n");
+  }
+#endif
 
-    vkBindImageMemory(Device, ExtImage.Image, ExtImage.Memory, 0);
+  if(vkAllocateMemory(Device, &AllocInfo, nullptr, &ExtImage.Memory) != VK_SUCCESS)
+  {
+    DriverLog("W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT handle type\n");
+    std::cout << "W1reless : allocated memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT handle type\n";
+  }
+  else
+  {
+    DriverLog("W1reless : failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT handle type\n");
+    std::cout << "W1reless : failed to allocate memory with VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT handle type\n";
+  }
 
-    TexCache[FD] = ExtImage;
+  vkBindImageMemory(Device, ExtImage.Image, ExtImage.Memory, 0);
+
+  TexCache[FD] = ExtImage;
 
   return &TexCache[FD];
 }
 
 void VkBackend::SyncImage(uint64_t FD)
 {
+  // VkWin32KeyedMutexAcquireReleaseInfoKHR Mutex;
 }

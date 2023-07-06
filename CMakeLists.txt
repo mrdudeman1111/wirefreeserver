@@ -25,7 +25,7 @@ file(GLOB SOURCES
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_library(_W1reless SHARED ${SOURCES} "include/Query.h")
+add_library(_W1reless SHARED ${SOURCES})
 
 set_target_properties(_W1reless PROPERTIES PREFIX "")
 set_target_properties(_W1reless PROPERTIES OUTPUT_NAME "driver_W1reless")

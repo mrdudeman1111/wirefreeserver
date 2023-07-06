@@ -1,8 +1,0 @@
-# ninja log v5
-1881	3673	7103269483723887	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.lib	6d4f2724e85b1b0e
-1	1881	7103269483723887	CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.obj	e49fb1f9faca4bb9
-14	805	7103219500021370	CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.obj	c03db0beb8981981
-15	358	7102059805321608	CMakeFiles/_W1reless.dir/linux64/driver.cpp.obj	e22d0e7ccdad40c6
-8	799	7103219499881332	CMakeFiles/_W1reless.dir/linux64/Display.cpp.obj	58300571599faff1
-2	804	7103219500011359	CMakeFiles/_W1reless.dir/linux64/Headset.cpp.obj	a13da508696d830a
-1881	3673	7103269483723887	C:/Program Files/Steam/steamapps/common/SteamVR/drivers/W1reless/bin/win64/driver_W1reless.dll	6d4f2724e85b1b0e
