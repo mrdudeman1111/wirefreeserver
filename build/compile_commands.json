@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/build",
+  "command": "/usr/bin/g++ -D_W1reless_EXPORTS -I/run/media/ethanw/LinuxGames/Repos/wirefreeserver/include -g -fPIC -o CMakeFiles/_W1reless.dir/linux64/Display.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Display.cpp",
+  "file": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Display.cpp",
+  "output": "CMakeFiles/_W1reless.dir/linux64/Display.cpp.o"
+},
+{
+  "directory": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/build",
+  "command": "/usr/bin/g++ -D_W1reless_EXPORTS -I/run/media/ethanw/LinuxGames/Repos/wirefreeserver/include -g -fPIC -o CMakeFiles/_W1reless.dir/linux64/Headset.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Headset.cpp",
+  "file": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/Headset.cpp",
+  "output": "CMakeFiles/_W1reless.dir/linux64/Headset.cpp.o"
+},
+{
+  "directory": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/build",
+  "command": "/usr/bin/g++ -D_W1reless_EXPORTS -I/run/media/ethanw/LinuxGames/Repos/wirefreeserver/include -g -fPIC -o CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/VulkanBackend.cpp",
+  "file": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/VulkanBackend.cpp",
+  "output": "CMakeFiles/_W1reless.dir/linux64/VulkanBackend.cpp.o"
+},
+{
+  "directory": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/build",
+  "command": "/usr/bin/g++ -D_W1reless_EXPORTS -I/run/media/ethanw/LinuxGames/Repos/wirefreeserver/include -g -fPIC -o CMakeFiles/_W1reless.dir/linux64/driver.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/driver.cpp",
+  "file": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/driver.cpp",
+  "output": "CMakeFiles/_W1reless.dir/linux64/driver.cpp.o"
+},
+{
+  "directory": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/build",
+  "command": "/usr/bin/g++ -D_W1reless_EXPORTS -I/run/media/ethanw/LinuxGames/Repos/wirefreeserver/include -g -fPIC -o CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.o -c /run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/vrDriver.cpp",
+  "file": "/run/media/ethanw/LinuxGames/Repos/wirefreeserver/linux64/vrDriver.cpp",
+  "output": "CMakeFiles/_W1reless.dir/linux64/vrDriver.cpp.o"
+}
+]
