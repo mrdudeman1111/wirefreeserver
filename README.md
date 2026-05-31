@@ -1,0 +1,7 @@
+### Wirefree Server
+***
+  Wirefree is a steamvr driver for meta headsets that allows them to connect to linux, macos, and windows machines over WiFi. I was 16 Years old when I started this project and a large portion of my time was spent in different respositories, I was deciding which tools to use for this project, and learning how to use them. I had to learn how to present images to the screen, how VR lenses distorts images and how I can account for that by projecting the Image onto a warped plane, how video coding algorithms such as H.264 and HEVC work, how android devices handle video coding, how to use gradle, etc. This was a very ambitious project and in the end I abandoned it because of the complexity. Looking back on the project, my choice of tooling was lackluster. This project could have been done much easier by writing or using a virtual driver like SudoVDA to capture OpenVR frames. My encoding pipeline was not sufficient, and the SteamVR Compositor's support for what I was writing was VERY little.
+
+ I am sad I never finished the project, but I learned a LOT about how vulkan can be used in things other than just rendering triangles to the screen. I also learned a lot about SteamVR drivers, display drivers, and video coding hardware during this project. I am very glad I worked on this project, it taught me a lot about driver development and ignited a deep interest in video coding.
+
+ After I stopped working on this project, I moved on to my Vulkan-SHM project.
